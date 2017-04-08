@@ -22,7 +22,7 @@ eloquent.notes.create! [
    { title: "Funny", note: "Doesn't put you to sleep"}
   ]
   
-  reviewers = Reviewer.create! [
+reviewers = Reviewer.create! [
   { name: "Joe", password: "abc123" },
   { name: "Jim", password: "123abc" }
 ]
