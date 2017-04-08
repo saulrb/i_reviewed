@@ -63,7 +63,7 @@ Rails.application.routes.draw do
   
   resources :sessions, only: [:new, :create, :destroy]
   
-  get "/login" => "session#new", as: "login"
+  get "/login" => "sessions#new", as: "login"
   delete "/logout" => "sessions#destroy", as: "logout"
 
 end
