@@ -3,7 +3,7 @@ class CreateNotes < ActiveRecord::Migration
     create_table :notes do |t|
       t.string :title
       t.text :note
-      t.references :book
+      t.references :book, index: true, foreign_key: true
 
       t.timestamps null: false
     end

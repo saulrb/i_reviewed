@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 20170408015118) do
   create_table "books", force: :cascade do |t|
     t.string   "name"
     t.string   "author"
-    t.integer  "reviwer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "reviewer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "books", ["reviwer_id"], name: "index_books_on_reviwer_id"
+  add_index "books", ["reviewer_id"], name: "index_books_on_reviewer_id"
 
   create_table "notes", force: :cascade do |t|
     t.string   "title"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 20170408015118) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "notes", ["book_id"], name: "index_notes_on_book_id"
 
   create_table "reviewers", force: :cascade do |t|
     t.string   "name"

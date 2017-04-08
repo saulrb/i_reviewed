@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_book, only [:create, :destroy]
+  before_action :set_book, only: [:create, :destroy]
   
   def create
     @note = @book.notes.new(note_params)
@@ -18,10 +18,10 @@ class NotesController < ApplicationController
   
   private
     def set_book
-      @books = Book.find(params[:book_id])
+      @book = Book.find(params[:book_id])
     end
     def note_params
-      paramas.require(:note).permit(:title, :note)
+      params.require(:note).permit(:title, :note)
     end
   
 end
