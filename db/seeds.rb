@@ -22,6 +22,8 @@ eloquent.notes.create! [
    { title: "Funny", note: "Doesn't put you to sleep"}
   ]
   
+Reviewer.destroy_all
+
 reviewers = Reviewer.create! [
   { name: "Joe", password: "abc123" },
   { name: "Jim", password: "123abc" }
